@@ -1,0 +1,3 @@
+this is a useless, brain damaged, subhuman type of task. It's unfinished for good reason
+I am not overlaoding 14 methods in one file when I can just use an interface to describe the behaviour
+What type of backwards ape am I?
