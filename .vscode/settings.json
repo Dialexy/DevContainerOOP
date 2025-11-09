@@ -11,7 +11,7 @@
   "editor.suggest.showSnippets": true,
   "editor.suggest.showWords": true,
   "editor.quickSuggestions": {
-    "other": false,
+    "other": true,
     "comments": false,
     "strings": false
   },
