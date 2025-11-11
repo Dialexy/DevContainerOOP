@@ -11,62 +11,65 @@ public class Warrior extends GameCharacter {
         this.damage = damage;
     }
 
-    public int getLevel() {
-      return level;
-    }
-
-    public void LevelingMechanic() {
-        if (experience >= level * 50) {
-            level++;
-            experience = 0;
-            maxHealth += 300;
-            health = Math.min(health + 100, maxHealth);
-            damage += 10;
-            System.out.printf("%s has leveled up! %s is now level: %d%n", this.name, this.name, getLevel());
-        }
-    }
-
     @Override
     public String getAttackType() {
         return attackType;
     }
 
-     @Override
-     public void attack(GameCharacter target) {
-        target.health -= (int)(1.2 * this.damage);
-        System.out.printf("%s Strikes %s for %dHP.%n", this.name, target.name, this.damage);
-
-        LevelingMechanic();
+    @Override
+    public void attack(GameCharacter target) {
+        int attackDamage = (int)(1.2 * this.damage);
+        int damageDealt = target.defend(attackDamage, this.attackType);
+        target.health -= damageDealt;
+        System.out.printf("%s Strikes %s for %d HP.%n", this.name, target.name, damageDealt);
+        experience++;
     }
 
     @Override
-    public void defend (GameCharacter target) {
-        if (target.getAttackType().matches("Melee")) {
-            System.out.printf("%s Blocks the attack, taking no damage.%n", this.name);
+    public int defend(int incomingDamage, String attackType) {
+        int damageReduction;
+
+        if (attackType.equals("Melee")) {
+            System.out.printf("%s Blocks the melee attack, taking no damage.%n", this.name);
+            damageReduction = 0;
         }
         else {
-            health -= (int)(0.2 * target.damage);
-            System.out.printf("%s Defends from an attack.%n", this.name);
+            damageReduction = (int)(0.8 * incomingDamage);
+            System.out.printf("%s Defends from a %s attack, reducing damage to %d HP.%n", this.name, attackType, damageReduction);
         }
-        LevelingMechanic();
+
+        experience++;
+        return damageReduction;
     }
 
     @Override
     public void useSpecialAbility(GameCharacter target) {
         if (specialCooldown > 0) {
-            specialCooldown--;
-            System.out.printf("The special ability for %s is currently on cooldown for %d more turns", this.name, specialCooldown);
+            System.out.printf("The special ability for %s is currently on cooldown for %d more turns.%n", this.name, specialCooldown);
+            attack(target);
         }
         else {
-        specialCooldown = 3;
-        target.health -= (3 * this.damage);
-        System.out.printf("%s Uses their special ability (Undying rage), doing: %dHP to %s.%n", this.name, this.damage, target.name);
+            int attackDamage = 3 * this.damage;
+            int damageDealt = target.defend(attackDamage, this.attackType);
+            target.health -= damageDealt;
+            specialCooldown = 3;
+            System.out.printf("%s Uses their special ability (Undying rage), doing: %d HP to %s.%n", this.name, damageDealt, target.name);
+            experience++;
         }
-        LevelingMechanic();
     }
 
     @Override
     public String getCharacterClass() {
         return "Warrior";
+    }
+
+    @Override
+    public void chooseAction(GameCharacter opponent) {
+        if (specialCooldown == 0) {
+            useSpecialAbility(opponent);
+        }
+        else {
+            attack(opponent);
+        }
     }
 }
