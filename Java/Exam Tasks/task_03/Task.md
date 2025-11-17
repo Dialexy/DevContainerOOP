@@ -15,7 +15,7 @@ Create an interface called Alien with the following methods:
 
 Implement the Alien interface with:
 
-Fields:
+    Fields:
 
         name (String)
         healthPoints (int) - starts at initial value, decreased by damage
@@ -39,7 +39,7 @@ Additional Method:
 
 Implement the Alien interface with:
 
-Fields:
+    Fields:
 
         name (String)
         healthPoints (int) - starts at initial value, decreased by damage
