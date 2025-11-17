@@ -60,8 +60,6 @@ Public Methods:
 
 Constructor
 
-The class must only have 1 constructor
-
         Requires only the following 3 arguments: String studentId, String name, int grade.
 
 The construtor must also:
