@@ -21,7 +21,8 @@ a) Pet
     Abstract method: makeSound() - each pet makes unique sounds
     Regular method: displayInfo() - shows basic pet details (name, age)
 
-Three Child Classes
+Three Child Classes:
+
 a) Dragon
 
     Additional attribute: fireBreathIntensity (int, scale 1-10)
@@ -47,15 +48,17 @@ c) NinjaCat
 Requirements
 
 Modify the Student class with the following specifications:
-Attributes
+
+        Attributes
 
     studentId (String)
     name (String)
     grade (int) - must be between 0-100
     isPassing (boolean) - true if grade >= 50
 
-Public Methods
-Constructor:
+Public Methods:
+
+Constructor
 
 The class must only have 1 constructor
 
@@ -75,7 +78,7 @@ Getters:
 
 Setters:
 
-setGrade(int newGrade) - updates the grade:
+        setGrade(int newGrade) - updates the grade:
 
     The method must validate: grade must be 0-100
     The method must display error message if invalid
