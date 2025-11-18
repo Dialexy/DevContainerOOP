@@ -36,7 +36,14 @@ public class BlobAlien implements Alien {
 
     @Override
     public void takeDamage(int damage) {
-        healthPoints -= (damage * this.gooinessFactor);
+        double actualDamage = (damage * this.gooinessFactor);
+
+        if (actualDamage > healthPoints) {
+            healthPoints = 0;
+        }
+        else {
+            healthPoints -= actualDamage;
+        }
     }
 
     @Override

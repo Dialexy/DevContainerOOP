@@ -36,7 +36,14 @@ public class RobotAlien implements Alien {
 
     @Override
     public void takeDamage(int damage) {
-        healthPoints -= (damage * (this.batteryPercentage / 100.0));
+        double actualDamage = (damage * (this.batteryPercentage / 100.0));
+
+        if (actualDamage > healthPoints) {
+            healthPoints = 0;
+        }
+        else {
+            healthPoints -= actualDamage;
+        }
     }
 
     @Override

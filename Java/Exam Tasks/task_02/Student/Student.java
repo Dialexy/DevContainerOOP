@@ -27,7 +27,7 @@ public class Student {
         this.studentId = studentId;
         this.name = name;
         this.grade = grade;
-        this.isPassing = grade >= 70;
+        this.isPassing = grade >= 50;
     }
 
     public void setGrade(int newGrade) {
@@ -36,7 +36,7 @@ public class Student {
             return;
         }
         this.grade = newGrade;
-        this.isPassing = newGrade >= 70;
+        this.isPassing = newGrade >= 50;
     }
 
     public void displayInfo() {
