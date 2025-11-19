@@ -1,3 +1,6 @@
-## Dev Container for OOP
+# Dev Container for OOP (Java)
 
-Stable version with .vscode/settings.Json, prepare.sh and .devcontainer/devcontainer.json updates 
+-  Improved Stablity
+-  Updated '.vscode/settings.Json'
+-  Updated prepare.sh
+-  Updated .devcontainer/devcontainer.json  
