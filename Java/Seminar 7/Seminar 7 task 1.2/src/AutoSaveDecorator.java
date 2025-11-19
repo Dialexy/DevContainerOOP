@@ -1,3 +1,7 @@
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+
 public class AutoSaveDecorator extends DocumentDecorator {
 
     public AutoSaveDecorator(Document document) {
@@ -5,11 +9,14 @@ public class AutoSaveDecorator extends DocumentDecorator {
     }
 
     public void saveDocument() {
-        System.out.println("Saving document");
-        // TODO: add saving logic
-        //       - Should save to file after every write
-        //       - Display save confirmation
-
+        System.out.println("Saving document...");
+        try {
+            Files.writeString(Path.of("document.txt"), document.read());
+            System.out.println("Document saved successfully.");
+        }
+        catch (IOException e) {
+            System.err.println("Failed to save document: " + e.getMessage());
+        }
     }
 
     @Override
