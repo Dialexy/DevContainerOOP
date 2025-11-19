@@ -6,9 +6,7 @@ public class GrammarCheckDecorator extends DocumentDecorator {
 
     public void checkGrammar() {
         System.out.println("Checking for grammatical errors in the document");
-        // TODO: add check grammar logic
-        //       - Should check for grammar issues
-        //       - Add warnings when reading
+        // I would add the logic here but it involves pulling through an API key and I'm not doing that for uni.
     }
 
     @Override

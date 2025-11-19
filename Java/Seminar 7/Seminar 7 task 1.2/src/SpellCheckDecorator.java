@@ -6,10 +6,8 @@ public class SpellCheckDecorator extends DocumentDecorator {
 
     public void spellCheck() {
         System.out.println("Checking for spelling errors in the document");
-        // TODO: Add actual spell-checking logic
-        //       - Should check for common misspellings
-        //       - Fix simple errors when writing
-    }
+        // yeah actually adding a proper spell checker would be insane I'm ngl so you get what's above instead.
+   }
 
     @Override
     public void write(String text) {
