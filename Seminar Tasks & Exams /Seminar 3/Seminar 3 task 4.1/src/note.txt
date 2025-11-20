@@ -1,3 +1,0 @@
-this task is so long and repeatitve
-it has 14 interface methods to implement for 2 classes
-and then 2 other classes that have 10ish methods each
