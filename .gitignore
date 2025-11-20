@@ -1,3 +1,6 @@
+#SSH saftey
+**/.ssh
+
 # Java-related files
 *.class
 *.jar
