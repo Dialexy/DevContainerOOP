@@ -1,7 +1,7 @@
 public class Student {
 
-  private String name;
-  private int studentID;
+  private final String name;
+  private final int studentID;
   private int age;
   private double gpa;
 
