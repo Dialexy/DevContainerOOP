@@ -12,6 +12,7 @@ public class WeatherStation {
 
     public void setTemp(double newTemp) {
         temp = newTemp;
+        notifyObservers();
     }
 
     public void subscribe(WeatherObserver observer) {
