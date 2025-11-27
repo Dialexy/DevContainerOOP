@@ -3,7 +3,7 @@ import java.util.List;
 
 public class StockMarket {
     private double price;
-    private List<StockObserver> members = new ArrayList<>();
+    private final List<StockObserver> members = new ArrayList<>();
 
     public double getPrice() {
         return price;
