@@ -10,6 +10,10 @@ public class Player {
       return score;
    }
 
+   public void setScore(int newScore) {
+      score = newScore;
+   }
+
    public Player (String name, int score) {
       this.name = name;
       this.score = score;
