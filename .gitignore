@@ -1,49 +1,111 @@
-# Java-related files
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# VS Code
+.vscode/
+.vscode-server/
+
+# JetBrains IDEs
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Sublime
+*.sublime-workspace
+*.sublime-project
+
+# Vim / Emacs Swap
+*.swp
+*.swo
+*.swn
+*.swm
+
+# Dev Container / Docker
+.devcontainer/.env
+.devcontainer/*.env
+.devcontainer/*.local
+
+# Docker
+docker-compose.override.yml
+*.env.docker
+
+# Environment / Secrets
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+# Java compiled files
 *.class
 *.war
 *.ear
-*.iml
 
+# Java archives
 *.jar
 
-# Maven-related
+# Maven
 target/
 dependency-reduced-pom.xml
 release.properties
 pom.xml.tag
 pom.xml.releaseBackup
 
-# IDE files
-.vscode/
-.vscode-server/
-.idea/
-*.ipr
-*.iws
-*.iml
+# Gradle
+.gradle/
+build/
+!gradle-wrapper.jar
 
-# Dev Container files
-.devcontainer/.env
-.devcontainer/.devcontainer.env
+# Build / Generated Directories
+bin/
+out/
+gen/
+generated/
+temp/
+cache/
+*.tsbuildinfo
 
-# OS junk
-.DS_Store
-Thumbs.db
-
-# Temp + swap files
-*.tmp
-*.temp
-*.swp
-*.swo
-
-# Logs and debug
+# Logs & Debug
 *.log
+logs/
 *.out
 *.err
 
-# Generated directories
-bin/
-gen/
+# Temporary Files
+*.tmp
+*.temp
+*.bak
 
-# Environment files
-.env
-.env.*
+# Tools
+*.lock
+*.pid
+
+# Testing
+coverage/
+.nyc_output/
+*.lcov
+
+# backup & archive files
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+*.old
+
+# metadata files
+*.orig
+*.rej
+*.patch
